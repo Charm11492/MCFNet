@@ -127,7 +127,7 @@ To use IWE event representations, joint training in sub dataset must be performe
 However, this process is more complicated, and we also recommend using pretreatment.py or other publicly available methods to generate other event representations as network inputs, such as voxels, timestamps, etc.
 ```bash
 cd joint/
-python -m yolox.tools.train.py -n  yolox-s -c yolox_s.pth -b 1 -d 1 --conf 0.001 --fp16 --fuse
+python -m yolox.tools.train.py -n  yolox-m -c yolox_m.pth -b 1 -d 1 --conf 0.001 --fp16 --fuse
 ```
 
 #### Stage 2: Generate IWE Representations (optional)
@@ -135,7 +135,7 @@ python -m yolox.tools.train.py -n  yolox-s -c yolox_s.pth -b 1 -d 1 --conf 0.001
 After joint training, generate IWE representations, 
 
 ```bash
-python -m yolox.tools.eval -n  yolox-s -c [**.pth] -b 1 -d 1 --conf 0.001 --fp16 --fuse
+python -m yolox.tools.eval -n  yolox-m -c [**.pth] -b 1 -d 1 --conf 0.001 --fp16 --fuse
 ```
 
 #### Stage 3: Train the main detection model:
